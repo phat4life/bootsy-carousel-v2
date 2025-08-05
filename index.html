@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootsy Carousel</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="carousel">
+    <button id="prev" class="nav">&#8592;</button>
+    <div class="carousel-container">
+      <div class="carousel-item">
+        <img src="images/your-image.jpg" alt="Family Photo" />
+        <div class="caption">Family Name</div>
+      </div>
+      <!-- Duplicate .carousel-item for each extra image -->
+    </div>
+    <button id="next" class="nav">&#8594;</button>
+  </div>
+
+  <div class="audio-player">
+    <audio id="player" controls>
+      <source src="audio/your-audio.mp3" type="audio/mpeg" />
+      Your browser does not support audio.
+    </audio>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Optional: trigger audio on first click
+    document.addEventListener("DOMContentLoaded", () => {
+      const player = document.getElementById("player");
+      const carousel = document.querySelector(".carousel");
+      carousel.addEventListener("click", () => {
+        if (player.paused) player.play();
+      });
+    });
+  </script>
+</body>
+</html>
 
